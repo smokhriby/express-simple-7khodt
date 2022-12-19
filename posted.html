@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>Posted! The form action attribute</h1>
+
+    <form action="/check" method="POST">
+      <label for="fname">First name:</label>
+      <input
+        type="text"
+        id="fname"
+        name="fname"
+        oninput="calculate()"
+      /><br /><br />
+      <label for="lname">Last name:</label>
+      <input type="text" id="lname" name="lname" /><br /><br />
+      <input type="submit" value="Submit" />
+    </form>
+
+    <p id="result">
+      Click the "Submit" button and the form-data will be sent to a page on the
+      server called "action_page.php".
+    </p>
+
+    <script>
+      //const axios = require('axios');
+      /*async function doPostRequest() {
+        document.getElementById('result').innerHTML +=
+          'doPostRequest was called';
+        let payload = { name: 'John Doe', occupation: 'gardener' };
+
+        let res = await axios.post('/check', payload);
+
+        let data = res.data;
+        document.getElementById('result').innerHTML += data;
+      }*/
+
+      function calculate() {
+        var xhr = new XMLHttpRequest();
+        document.getElementById('result').innerHTML =
+          'calculate function was called. ';
+        xhr.onload = function () {
+          var data, data2, data3;
+          document.getElementById('result').innerHTML +=
+            'xhr.onload was called ';
+          data = this.responseText;
+          //var dataJSON = JSON.parse(data); //take the JSON formatted string from the server, and change it into a JSON object stored in a variable.
+          //console.log(data);
+          data2 = '{"id":"4","weight":"19lb"}'; //typeof JSON.parse(data);
+          data3 = typeof JSON.parse(this.responseText);
+          document.getElementById('result').innerHTML += data;
+          document.getElementById('result').innerHTML += '<br>' + data2;
+          document.getElementById('result').innerHTML += '<br>' + data3;
+        };
+        xhr.open('POST', '/check', true);
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.send(
+          JSON.stringify({
+            name: 'Deska',
+            email: 'deska@gmail.com',
+            phone: '342234553',
+          })
+        );
+        document.getElementById('result').innerHTML +=
+          ' xhr post request sent by client ';
+
+        //doPostRequest();
+        //axios.post('/check', { color: 'yellow' });
+        //document.getElementById('result').innerHTML =
+        //   'client sent axios.post request ';
+      }
+      //axios
+      //  .post('/check', {
+      //    firstName: 'Fred',
+      //    lastName: 'Flintstone',
+      //  })
+      // .then(resultFunction(response))
+      //   .catch(errorFunction (error));
+      //const sendPost = async () => {
+      //  try {
+      //   return await axios.post('/check', myData);
+      //  } catch (error) {
+      //    console.error(error);
+      //  }
+      //   };
+      // var myResult = sendPost();
+      //document.getElementById('result').innerHTML += myResult;
+    </script>
+  </body>
+</html>

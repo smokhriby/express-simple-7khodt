@@ -1,0 +1,46 @@
+<html>
+  <link rel="stylesheet" href="./style.css" />
+  <h1>Hello Express!</h1>
+  <form>
+    <!-- method="POST" action="/"> -->
+    <input type="text" id="bar" name="bar" oninput="myFunction()" />
+    <!-- <button type="submit">Send</button> -->
+  </form>
+  <br />Result<br />
+  <p id="resultparagraph"></p>
+
+  <script>
+    const axios = require('axios');
+    async function postData() {
+      const food = {
+        name: 'Bread',
+        weight: 450,
+        quantity: 3,
+        //input: document.getElementById('bar').value,
+      };
+
+      document.getElementById('resultparagraph').innerHTML +=
+        ' /n postData called';
+      axios.post('http://localhost:3010/', food);
+      /*try {
+        const response = await axios.post('http://localhost:3010/', food);
+        document.getElementById('resultparagraph').innerHTML +=
+          ' \n request successful';
+        console.log('Request successful!');
+      } catch (error) {
+        if (error.response) {
+          console.log(error.reponse.status);
+        } else {
+          console.log(error.message);
+        }
+      }*/
+    }
+    function myFunction() {
+      document.getElementById('resultparagraph').innerHTML = 'test1';
+      postData();
+    }
+  </script>
+  <script>
+    myFunction();
+  </script>
+</html>
