@@ -1,3 +1,5 @@
+//this file should not have bom.
+
 // Requiring module
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -7,7 +9,7 @@ const expAutoSan = require('express-autosanitizer');
 const app = express();
 const path = require('path');
 
-var serverData = { "name": "Sue", "age": "88", "city": "Boston"}; //JSON object
+var serverData = { name: 'Sue', age: '88', city: 'Boston' }; //JSON object
 var s = JSON.stringify(serverData);
 console.log(s);
 
