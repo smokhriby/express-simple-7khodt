@@ -12,6 +12,7 @@ const path = require('path');
 var serverData = { name: 'Sue', age: '88', city: 'Boston' }; //JSON object
 var s = JSON.stringify(serverData);
 console.log(s);
+console.log('no bom hopefully');
 
 // for parsing application/xwww-
 app.use(bodyParser.urlencoded({ extended: true }));
