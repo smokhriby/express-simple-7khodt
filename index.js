@@ -38,7 +38,7 @@ app.get('/gfg', (req, res, next) => {
 });
 
 app.get('/', (req, res, next) => {
-  res.sendFile(path.resolve('posted.html'));
+  res.sendFile(path.resolve('postednobom.html'));
 });
 
 app.delete('/gfgdelete', (req, res, next) => {
