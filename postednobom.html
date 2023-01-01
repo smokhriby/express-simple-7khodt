@@ -39,22 +39,26 @@
         document.getElementById('result').innerHTML =
           'calculate function was called. ';
         xhr.onload = function () {
-          var data, data2, data3;
+          var data, data2, data3, simplifiedresponsetext, switch;
           document.getElementById('result').innerHTML +=
             'xhr.onload was called ';
           data = this.responseText;
           document.getElementById('result').innerHTML += '<br>' + data;
           document.getElementById('result').innerHTML += '<br>' + data.length;
           for (let i = 0; i < data.length; i++) {
-            document.getElementById('result').innerHTML +=
-              '<br>' + data.charCodeAt(i);
+            if data.charCodeAt(i)=10{
+              simplifiedresponsetext = data.substring(i+1);
+              break;
+            }
+             // document.getElementById('result').innerHTML +=
+            //  '<br>' + data.charCodeAt(i);
           }
           //document.getElementById('result').innerHTML += data;
           //var dataJSON = JSON.parse(data); //take the JSON formatted string from the server, and change it into a JSON object stored in a variable.
           //console.log(data);
           //data2 = '{"id":"4","weight":"19lb"}'; //typeof JSON.parse(data);
-          data3 = data.length; //typeof JSON.parse(this.responseText);
-          document.getElementById('result').innerHTML += '<br>' + data;
+          data3 = simplifiedresponsetext.length; //typeof JSON.parse(this.responseText);
+          document.getElementById('result').innerHTML += '<br>' + simplifiedresponsetext;
           //document.getElementById('result').innerHTML += '<br>' + data2;
           document.getElementById('result').innerHTML += '<br>' + data3;
         };
