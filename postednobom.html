@@ -47,7 +47,7 @@
           //var dataJSON = JSON.parse(data); //take the JSON formatted string from the server, and change it into a JSON object stored in a variable.
           //console.log(data);
           data2 = '{"id":"4","weight":"19lb"}'; //typeof JSON.parse(data);
-          data3 = typeof JSON.parse(this.responseText);
+          data3 = data.length; //typeof JSON.parse(this.responseText);
           document.getElementById('result').innerHTML += data;
           document.getElementById('result').innerHTML += '<br>' + data2;
           document.getElementById('result').innerHTML += '<br>' + data3;
