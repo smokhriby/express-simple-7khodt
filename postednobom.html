@@ -43,6 +43,10 @@
           document.getElementById('result').innerHTML +=
             'xhr.onload was called ';
           data = this.responseText;
+          for (let i = 0; i < data.length; i++) {
+            document.getElementById('result').innerHTML +=
+              '<br>' + data.charCodeAt(i);
+          }
           //document.getElementById('result').innerHTML += data;
           //var dataJSON = JSON.parse(data); //take the JSON formatted string from the server, and change it into a JSON object stored in a variable.
           //console.log(data);
