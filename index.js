@@ -27,6 +27,7 @@ app.post('/check', (req, res, next) => {
   console.log('post data was received from the client');
   res.send(s2); //send serverData as a string.
   console.log('serverData was sent to the client');
+  console.log(s2);
   //console.log(req.autosan.body);
   //res.send('This is the post request ' + req.autosan.body.fname);
   next();
