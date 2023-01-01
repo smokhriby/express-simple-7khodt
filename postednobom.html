@@ -39,14 +39,14 @@
         document.getElementById('result').innerHTML =
           'calculate function was called. ';
         xhr.onload = function () {
-          var data, data2, data3, simplifiedresponsetext, switch;
+          var data, data2, data3, simplifiedresponsetext;
           document.getElementById('result').innerHTML +=
             'xhr.onload was called ';
           data = this.responseText;
           document.getElementById('result').innerHTML += '<br>' + data;
           document.getElementById('result').innerHTML += '<br>' + data.length;
           for (let i = 0; i < data.length; i++) {
-            if data.charCodeAt(i)=10{
+            if data.charCodeAt(i)==10{
               simplifiedresponsetext = data.substring(i+1);
               break;
             }
