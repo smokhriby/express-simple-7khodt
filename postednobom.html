@@ -43,6 +43,8 @@
           document.getElementById('result').innerHTML +=
             'xhr.onload was called ';
           data = this.responseText;
+          document.getElementById('result').innerHTML += '<br>' + data;
+          document.getElementById('result').innerHTML += '<br>' + data.length;
           for (let i = 0; i < data.length; i++) {
             document.getElementById('result').innerHTML +=
               '<br>' + data.charCodeAt(i);
