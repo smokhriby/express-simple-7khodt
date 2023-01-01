@@ -11,6 +11,7 @@ const path = require('path');
 
 var serverData = { name: 'Sue', age: '88', city: 'Boston' }; //JSON object
 var s = JSON.stringify(serverData);
+var s2 = 'data';
 console.log(s);
 console.log('no bom hopefully');
 
